@@ -1,2 +1,4 @@
-# chef
-My Chef Repository
+# validatepip
+
+TODO: Enter the cookbook description here.
+
