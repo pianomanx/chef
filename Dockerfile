@@ -12,7 +12,9 @@ RUN apt-get update && \
     apt-get install -y apt-transport-https ca-certificates curl software-properties-common wget ssh
 # install docker
 # RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - && \
-RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" && \
+RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg > keyfile 
+    apt-key add keyfile && \
+    add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" && \
     apt-get update && \
     apt-get install -y docker-ce
 RUN wget --quiet --content-disposition "http://packages.chef.io/files/${CHANNEL}/chefdk/${VERSION}/ubuntu/16.04/chefdk_${VERSION}-1_amd64.deb" -O /tmp/chefdk.deb && \
