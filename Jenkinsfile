@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker { image 'centos:7' } }
+    agent { docker { image 'centos7:latest' } }
     stages {
         stage('build') {
             steps {
