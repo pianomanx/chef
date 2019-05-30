@@ -1,9 +1,9 @@
 pipeline {
-    agent { docker { image 'python:3.5.1' } }
+    agent { docker { image 'centos:7' } }
     stages {
         stage('build') {
             steps {
-                sh 'python --version'
+                sh 'uname -a'
             }
         }
     }
