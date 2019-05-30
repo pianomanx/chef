@@ -11,8 +11,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
 RUN apt-get update && \
     apt-get install -y apt-transport-https ca-certificates curl software-properties-common wget ssh
 # install docker
-# RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - && \
-RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg > keyfile 
+RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg > keyfile && \
     apt-key add keyfile && \
     add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" && \
     apt-get update && \
