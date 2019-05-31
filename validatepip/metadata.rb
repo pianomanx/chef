@@ -1,6 +1,6 @@
 name 'validatepip'
-maintainer 'The Authors'
-maintainer_email 'you@example.com'
+maintainer 'James Joyner'
+maintainer_email 'jjoyner@verizonmedia.com'
 license 'All Rights Reserved'
 description 'Installs/Configures validatepip'
 long_description 'Installs/Configures validatepip'
