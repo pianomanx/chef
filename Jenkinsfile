@@ -27,11 +27,13 @@ pipeline {
       }
     }
     stage('Post jUnit') {
-      post {
-        always {
-          warnings(canComputeNew: false, canResolveRelativePaths: false, categoriesPattern: '', consoleParsers: [[parserName: 'ChefCookbookLint']], defaultEncoding: '', excludePattern: '', healthy: '', includePattern: '', messagesPattern: '', unHealthy: '')
-          junit '*_junit.xml'
-          archive '*_junit.xml'
+      steps {
+        post {
+          always {
+            warnings(canComputeNew: false, canResolveRelativePaths: false, categoriesPattern: '', consoleParsers: [[parserName: 'ChefCookbookLint']], defaultEncoding: '', excludePattern: '', healthy: '', includePattern: '', messagesPattern: '', unHealthy: '')
+            junit '*_junit.xml'
+            archive '*_junit.xml'
+          }
         }
       }
     }
