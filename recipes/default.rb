@@ -4,15 +4,18 @@
 #
 # Copyright:: 2019, The Authors, All Rights Reserved.
 
-execute 'get pip' do
-  command 'curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py'
+# Get pip from Pypa
+remote_file '/tmp/get-pip.py' do
+  source 'https://bootstrap.pypa.io/get-pip.py'
 end
 
+# Install Pip for Python 2.7.5
 execute 'install pip' do
-  command 'python get-pip.py'
+  command 'python /tmp/get-pip.py'
   live_stream true
 end
 
+# Install Pip module certifi if node is redhat 
 case node['platform_family']
 when 'rhel'
   execute 'install certifi' do
