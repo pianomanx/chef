@@ -7,22 +7,26 @@ pipeline {
 
   }
   stages {
-    stage('Chef') {
+    stage('Chef Cookbook Lint Foodcritic') {
       steps {
-        parallel(
-          "Chef Cookbook Unit": {
-            chef_cookbook_unit()
-
-          },
-          "Chef Cookbook Lint": {
-            chef_cookbook_foodcritic()
-            chef_cookbook_cookstyle()
-
-          },
-          "Chef Cookbook Functional": {
-              chef_cookbook_functional()
-          }
-        )
+        "Chef Cookbook Lint": {
+          chef_cookbook_foodcritic()
+        },
+    stage('Chef Cookbook Lint Cookstyle') {
+      steps {
+        "Chef Cookbook Lint": {
+          chef_cookbook_cookstyle()
+        },
+    stage('Chef Functional') {
+      steps {
+        "Chef Cookbook Functional": {
+          chef_cookbook_functional()
+        },
+    stage('Chef Cookbook Unit') {
+      steps {
+        "Chef Cookbook Unit": {
+          chef_cookbook_unit()
+        },
       }
       post {
         always {
