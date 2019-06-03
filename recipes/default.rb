@@ -5,7 +5,7 @@
 # Copyright:: 2019, The Authors, All Rights Reserved.
 
 # Get pip from Pypa
-remote_file '/tmp/get-pip.py' do
+remote_file '#{Chef::Config[:file_cache_path]}/get-pip.py' do
   source 'https://bootstrap.pypa.io/get-pip.py'
 end
 
