@@ -6,12 +6,12 @@
 
 # Get pip from Pypa
 remote_file "#{Chef::Config[:file_cache_path]}/get-pip.py" do
-  source 'https://bootstrap.pypa.io/get-pip.py'
+  source "https://bootstrap.pypa.io/get-pip.py"
 end
 
 # Install Pip for Python 2.7.5
 execute "install pip" do
-  command 'python /tmp/get-pip.py'
+  command "python #{Chef::Config[:file_cache_path]}/get-pip.py"
   live_stream true
 end
 
