@@ -5,7 +5,7 @@ license 'All Rights Reserved'
 description 'Installs/Configures validatepip'
 long_description 'Installs/Configures validatepip'
 version '0.1.0'
-#chef_version '>= 14.3.37'
+chef_version '>= 13.4.19'
 supports 'redhat'
 
 # The `issues_url` points to the location where issues for this cookbook are
