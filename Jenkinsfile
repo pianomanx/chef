@@ -31,15 +31,6 @@ pipeline {
           archive '*_junit.xml'
 
         }
-
-      }
-    }
-    stage('Publish to Chef Server') {
-      when {
-          branch 'master'
-      }
-      steps {
-          chef_cookbook_publish_chef()
       }
     }
   }
