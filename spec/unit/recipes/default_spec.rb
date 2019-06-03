@@ -7,7 +7,7 @@
 require 'spec_helper'
 
 describe 'validatepip::default' do
-  context 'When all attributes are default, on CentOS 7.6.1804' do
+  context 'Validate CentOS 7.6.1804' do
     let(:chef_run) do
       # for a complete list of available platforms and versions see:
       # https://github.com/customink/fauxhai/blob/master/PLATFORMS.md
