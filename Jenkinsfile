@@ -24,6 +24,7 @@ pipeline {
     stage('Chef Cookbook Unit') {
       steps {
         chef_cookbook_unit()
+        sh "ls -al"
       }
     }
   }
