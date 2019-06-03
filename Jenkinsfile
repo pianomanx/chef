@@ -8,30 +8,22 @@ pipeline {
   stages {
     stage('Chef Cookbook Lint Foodcritic') {
       steps {
-        "Chef Cookbook Lint": {
-          chef_cookbook_foodcritic()
-        }
+        chef_cookbook_foodcritic()
       }
     }
     stage('Chef Cookbook Lint Cookstyle') {
       steps {
-        "Chef Cookbook Lint": {
-          chef_cookbook_cookstyle()
-        }
+        chef_cookbook_cookstyle()
       }
     }
     stage('Chef Functional') {
       steps {
-        "Chef Cookbook Functional": {
-          chef_cookbook_functional()
-        }
+        chef_cookbook_functional()
       }
     }
     stage('Chef Cookbook Unit') {
       steps {
-        "Chef Cookbook Unit": {
-          chef_cookbook_unit()
-        }
+        chef_cookbook_unit()
       }
     }
   }
